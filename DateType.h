@@ -1,5 +1,9 @@
+// This code was outline using ChatGPT and modified by the programmer.
+
 #pragma once
 # include <iostream>
+
+
 
 class DateType
 {
