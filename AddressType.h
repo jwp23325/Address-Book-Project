@@ -1,8 +1,11 @@
+// This code was outlined using ChatGPT and modified by the coder
+
+
 #pragma once
 #include <iostream>
 #include <string>
-#include <algorithm> // For std::find
-#include <vector> // For std::vector
+#include <algorithm> 
+#include <vector> 
 
 
 class AddressType
