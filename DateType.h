@@ -5,7 +5,7 @@
 
 
 
-class DateType
+class dateType
 {
 private:
 	int dMonth;
@@ -14,7 +14,7 @@ private:
 
 public:
 	// Constructor with default parameters
-	DateType(int month = 1, int day = 1, int year = 1900) {
+	dateType(int month = 1, int day = 1, int year = 1900) {
 		setDate(month, day, year);
 	}
 	

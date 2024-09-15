@@ -8,7 +8,7 @@
 #include <vector> 
 
 
-class AddressType
+class addressType
 {
 private:
 	std::string address;
@@ -21,7 +21,7 @@ private:
 
 public:
 	// Constructor with default parameters using initialization list
-	AddressType(std::string addr = "", std::string cty = "", std::string st = "XX", int zip = 10000)
+	addressType(std::string addr = "", std::string cty = "", std::string st = "XX", int zip = 10000)
 		: address(addr), city(cty), state(st), zipcode(zip) {
 		
 		// Validates state and zipcode
@@ -94,7 +94,7 @@ public:
 };
 
 // Define the list of valid state abbreviations
-const std::vector<std::string> AddressType::validStates = {
+const std::vector<std::string> addressType::validStates = {
 	"AL", "AK", "AZ", "AR", "CA", "CO", "CT", "DE", "FL", "GA", "HI", "ID",
 	"IL", "IN", "IA", "KS", "KY", "LA", "ME", "MD", "MA", "MI", "MN", "MS",
 	"MO", "MT", "NE", "NV", "NH", "NJ", "NM", "NY", "NC", "ND", "OH", "OK",
