@@ -1,67 +1,48 @@
+// This header file defines the extPersonType class, which extends personType.
+// It includes additional information such as birthdate, address, phone number,
+// and relationship status. The class also provides methods to access and modify 
+// these attributes. Code outlined by ChatGPT and modified by the coder.
+
 #pragma once
 #include "personType.h"
-#include "dateType.h"
-#include "addressType.h"
+#include "dateType.h"   // Include the header for dateType
+#include "addressType.h" // Include the header for addressType
 #include <string>
 #include <iostream>
-#include <regex>
 
-// Inheritance
-class extPersonType : public personType
-{
+class extPersonType : public PersonType {
 private:
-	// Composition
-	dateType birthdate;
-	addressType address;
+    // Composition: dateType and addressType objects
+    DateType birthdate;
+    AddressType address;
 
-	// Additional member variables
-	std::string phoneNumber;
-	std::string relationship;
-
+    // Additional member variables
+    std::string phoneNumber;
+    std::string relationship;
 
 public:
-	// Constructor with default parameters
-	extPersonType(const std::string& fName = "", const std::string& lName = "",
-				  int month = 1, int day = 1, int year = 1900,
-				  const std::string& street = "", const std::string& city = "",
-				  const std::string& state = "XX", int zip = 10000,
-				  const std::string& phone = "None", const std::string& relation = "None")
-		: personType(fName,lName),
-		  birthdate(month,day,year),
-		  address(street,city,state,zip),
-		  phoneNumber(phone),
-		  relationship(relation) {}
-	
-	void setPhoneNumber(const std::string& phone) {
-		
-		// Define the regex patter for valid phone number
-		const std::regex pattern(R"(\d{3}-\d{3}-\d{4})");
+    // Constructor with default parameters
+    extPersonType(const std::string& fName = "", const std::string& lName = "",
+        int month = 1, int day = 1, int year = 1900,
+        const std::string& street = "", const std::string& city = "",
+        const std::string& state = "XX", int zip = 10000,
+        const std::string& phone = "None", const std::string& relation = "None");
 
-		// Validates phone number
-		if (std::regex_match(phone, pattern)) {
-			phoneNumber = phone;
-		}
+    // Sets phone number
+    void setPhoneNumber(const std::string& phone);
 
-		// Default phone number
-		else {
-			phoneNumber = "None";
-		}
-	}
+    // Sets relationship
+    void setRelationship(const std::string& relation);
 
-	void setRelationship(const std::string& relation) {
-		if (relation == "Family" || relation == "Friend" || relation == "Business") {
-			relationship = relation;
-		}
+    // Gets phone number
+    std::string getPhoneNumber() const;
 
-		else {
-			relationship = "None"
-		}
-	}
+    // Gets relationhip
+    std::string getRelationship() const;
 
+    // Gets Birth Month
+    int getBirthMonth() const;
 
-
-	
-
-
+    // Print function
+    void print() const;
 };
-
