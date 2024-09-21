@@ -1,4 +1,9 @@
-// This code was outlined using ChatGPT and modified by the coder
+// This header file defines the AddressType class, which represents a physical address.
+// It includes methods for setting and getting address details, 
+// as well as validation for state abbreviations and zip codes.
+// This code was outlined using ChatGPT and modified by the coder.
+
+
 #pragma once
 #include <iostream>
 #include <string>

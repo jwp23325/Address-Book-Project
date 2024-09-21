@@ -3,6 +3,7 @@
 // setting invalid states, and setting invalid zip codes.
 // The output shows the behavior of the AddressType methods.
 // This code was outlined using ChatGPT and modified by the coder.
+
 #pragma once 
 #include <iostream>
 #include "AddressType.h"
