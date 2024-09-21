@@ -46,7 +46,7 @@ void DateType::setDate(int month, int day, int year) {
 }
 
 // Gets the number of days in the month
-int DateType::getDaysInMonth(int month, int year) {
+int DateType::getDaysInMonth(int month, int year) const{
     // Control flow
     switch (month) {
         // January, March, May, July, August, October, December
@@ -70,7 +70,7 @@ int DateType::getDay() {
 }
 
 // Gets month
-int DateType::getMonth() {
+int DateType::getMonth() const{
     return dMonth;
 }
 

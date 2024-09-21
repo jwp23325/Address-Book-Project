@@ -47,7 +47,7 @@ int extPersonType::getBirthMonth() const {
 
 // Print function
 void extPersonType::print() const {
-    personType::print(); // Call the base class print function
+    PersonType::print(); // Call the base class print function
     std::cout << "Birthdate: " << birthdate.getMonth() << "/"
         << birthdate.getDay() << "/" << birthdate.getYear() << std::endl;
     std::cout << "Address: " << address.getAddress() << ", "

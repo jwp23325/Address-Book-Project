@@ -5,8 +5,8 @@
 
 #pragma once
 #include "personType.h"
-#include "dateType.h"   // Include the header for dateType
-#include "addressType.h" // Include the header for addressType
+#include "dateType.h"   
+#include "addressType.h" 
 #include <string>
 #include <iostream>
 
