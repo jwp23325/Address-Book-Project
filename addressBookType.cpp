@@ -24,15 +24,25 @@ void addressBookType::initEntry(const std::string& filename) {
     std::string fName, lName, street, city, state, phone, relation;
     int month, day, year, zip;
 
-    while (length < maxLength && std::getline(inputFile, fName)) {
-        std::getline(inputFile, lName);
+    while (length < maxLength && inputFile.peek() != EOF) {
+
+        inputFile >> fName >> lName;
+        inputFile.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+
         inputFile >> month >> day >> year;
-        inputFile.ignore(); // Ignore the newline character
+        inputFile.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+
         std::getline(inputFile, street);
+       
         std::getline(inputFile, city);
-        inputFile >> state >> zip;
-        inputFile.ignore(); // Ignore the newline character
+
+        std::getline(inputFile, state);
+       
+        inputFile >> zip;
+        inputFile.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+
         std::getline(inputFile, phone);
+        
         std::getline(inputFile, relation);
 
         extPersonType newPerson(fName, lName, month, day, year, street, city, state, zip, phone, relation);

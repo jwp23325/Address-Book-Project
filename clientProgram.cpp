@@ -1,7 +1,7 @@
 #include <iostream>
 #include "addressBookType.h"
 
-/*
+
 void showMenu() {
     std::cout << "On-line Address Book" << std::endl;
     std::cout << "Select an option:" << std::endl;
@@ -16,9 +16,7 @@ int main() {
     addressBookType myAddressBook;
     myAddressBook.initEntry("AddressBookData.txt");
     int choice = 0;
-
-
-   
+  
     do {
         showMenu();
         std::cin >> choice;
@@ -57,48 +55,5 @@ int main() {
         }
     } while (choice != 5);
     
-    return 0;
-}
-*/
-
-#include <iostream>
-#include <fstream>
-#include <string>
-
-void readAddressBook(const std::string& filename) {
-    std::ifstream inputFile(filename);
-    if (!inputFile) {
-        std::cerr << "Error opening file: " << filename << std::endl;
-        return;
-    }
-
-    std::string fName, lName, street, city, state, phone, relation;
-    int month, day, year, zip;
-
-    while (std::getline(inputFile, fName)) {
-        std::getline(inputFile, lName);
-        inputFile >> month >> day >> year;
-        inputFile.ignore(); // Ignore the newline character
-        std::getline(inputFile, street);
-        std::getline(inputFile, city);
-        inputFile >> state >> zip;
-        inputFile.ignore(); // Ignore the newline character
-        std::getline(inputFile, phone);
-        std::getline(inputFile, relation);
-
-        // Output the read data to verify correctness
-        std::cout << "Name: " << fName << " " << lName << "\n"
-            << "Birthday: " << month << "/" << day << "/" << year << "\n"
-            << "Address: " << street << ", " << city << ", " << state << " " << zip << "\n"
-            << "Phone: " << phone << "\n"
-            << "Relation: " << relation << "\n\n";
-    }
-
-    inputFile.close(); // Close the file
-}
-
-int main() {
-    std::string filename = "AddressBookData.txt";
-    readAddressBook(filename);
     return 0;
 }
