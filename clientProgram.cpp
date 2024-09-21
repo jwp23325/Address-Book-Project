@@ -15,6 +15,7 @@ void showMenu() {
 int main() {
     addressBookType myAddressBook;
     myAddressBook.initEntry("AddressBookData.txt");
+    myAddressBook.sortEntries();
     int choice = 0;
   
     do {

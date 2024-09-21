@@ -1,4 +1,3 @@
-// addressBookType.cpp
 // This file implements the addressBookType class functions defined in the header file.
 // The class manages an array of extPersonType objects and provides various functionalities
 // for managing address book entries.
