@@ -12,32 +12,26 @@
 
 class AddressType {
 private:
-    std::string address;
-    std::string city;
-    std::string state;
-    int zipcode;
+    std::string address;                                                // Street
+    std::string city;                                                   // City
+    std::string state;                                                  // State
+    int zipcode;                                                        // Zipcode
 
-    // List of valid state abbreviations
-    static const std::vector<std::string> validStates;
+    static const std::vector<std::string> validStates;                   // List of valid state abbreviations
 
 public:
-    // Constructor with default parameters using initialization list
-    AddressType(std::string addr = "", std::string cty = "", std::string st = "XX", int zip = 10000);
-
-    // Setters
-    void setAddress(std::string addr);
-    void setCity(std::string cty);
-    void setState(std::string st);
-    void setZipcode(int zip);
-
-    // Getters
-    std::string getAddress() const;
-    std::string getCity() const;
-    std::string getState() const;
-    int getZipcode() const;
-
-    // Print method
-    void print() const;
+   
+    AddressType(std::string addr = "", std::string cty = "", 
+                std::string st = "XX", int zip = 10000);                // Constructor with default parameters using initialization list
+    void setAddress(std::string addr);                                  // Sets street 
+    void setCity(std::string cty);                                      // Sets city
+    void setState(std::string st);                                      // Sets state
+    void setZipcode(int zip);                                           // Sets zipcode
+    std::string getAddress() const;                                     // Gets street
+    std::string getCity() const;                                        // Gets city
+    std::string getState() const;                                       // Gets state
+    int getZipcode() const;                                             // Gets zipcode
+    void print() const;                                                 // Print method
 };
 
 
