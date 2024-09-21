@@ -27,10 +27,12 @@ public:
     void setCity(std::string cty);                                      // Sets city
     void setState(std::string st);                                      // Sets state
     void setZipcode(int zip);                                           // Sets zipcode
+
     std::string getAddress() const;                                     // Gets street
     std::string getCity() const;                                        // Gets city
     std::string getState() const;                                       // Gets state
     int getZipcode() const;                                             // Gets zipcode
+
     void print() const;                                                 // Print method
 };
 
