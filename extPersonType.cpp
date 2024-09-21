@@ -49,12 +49,13 @@ int extPersonType::getBirthMonth() const {
 
 // Print function
 void extPersonType::print() const {
-    PersonType::print(); 
+    PersonType::print();
+    
     std::cout << "Birthdate: " << birthdate.getMonth() << "/"
-        << birthdate.getDay() << "/" << birthdate.getYear() << std::endl;
+              << birthdate.getDay() << "/" << birthdate.getYear() << std::endl;
     std::cout << "Address: " << address.getAddress() << ", "
-        << address.getCity() << ", " << address.getState() << " "
-        << address.getZipcode() << std::endl;
+              << address.getCity() << ", " << address.getState() << " "
+              << address.getZipcode() << std::endl;
     std::cout << "Phone Number: " << phoneNumber << std::endl;
     std::cout << "Relationship: " << relationship << std::endl;
 }
