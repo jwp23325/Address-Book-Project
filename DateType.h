@@ -1,11 +1,5 @@
-// This class represents a date with validation features.
-// It includes methods for setting and getting date details,
-// as well as checking for leap years and calculating the number of days in a month.
-// This code was outlined using ChatGPT and modified by the coder.
-
 #pragma once
 #include <iostream>
-
 
 class DateType {
 private:
@@ -18,22 +12,22 @@ public:
     DateType(int month = 1, int day = 1, int year = 1900);
 
     // Checks if year is a leap year
-    bool isLeapYear(int year);
+    bool isLeapYear(int year) const;
 
     // Sets date with validation
     void setDate(int month, int day, int year);
 
     // Gets the number of days in the month
-    int getDaysInMonth(int month, int year);
+    int getDaysInMonth(int month, int year) const;
 
     // Gets day
-    int getDay();
+    int getDay() const;
 
     // Gets month
-    int getMonth();
+    int getMonth() const;
 
     // Gets year
-    int getYear();
+    int getYear() const;
 
     // Print method
     void print() const;

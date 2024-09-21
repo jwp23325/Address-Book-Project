@@ -4,14 +4,14 @@
 // This code was outlined using ChatGPT and modified by the coder.
 
 #pragma once
-#include "DateType.h"
+#include "dateType.h"
 
 DateType::DateType(int month, int day, int year) {
     setDate(month, day, year);
 }
 
 // Checks if year is a leap year
-bool DateType::isLeapYear(int year) {
+bool DateType::isLeapYear(int year) const{
     return (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0);
 }
 
@@ -65,7 +65,7 @@ int DateType::getDaysInMonth(int month, int year) const{
 }
 
 // Gets day
-int DateType::getDay() {
+int DateType::getDay() const{
     return dDay;
 }
 
@@ -75,7 +75,7 @@ int DateType::getMonth() const{
 }
 
 // Gets year
-int DateType::getYear() {
+int DateType::getYear() const{
     return dYear;
 }
 
