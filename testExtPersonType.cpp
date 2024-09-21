@@ -1,10 +1,10 @@
-// Program to verify that the modified dateType class is working correctl
+// Program to verify that the modified dateType class is working correctly
 
 #include <iostream>
 #include "extPersonType.h"
 
 using namespace std;
-/*
+
 int main()
 {
     cout << "Testing default constructor ... " << endl;
@@ -28,4 +28,3 @@ int main()
     cout << endl;
 
 }
-*/

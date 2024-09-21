@@ -40,7 +40,7 @@ public:
     // Gets relationhip
     std::string getRelationship() const;
 
-    // Gets Birth Month
+    // Gets birth month
     int getBirthMonth() const;
 
     // Print function

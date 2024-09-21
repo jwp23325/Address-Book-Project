@@ -17,16 +17,12 @@ extPersonType::extPersonType(const std::string& fName, const std::string& lName,
     phoneNumber(phone),
     relationship(relation) {}
 
-// Setter and getter for phoneNumber
+// Sets phone number
 void extPersonType::setPhoneNumber(const std::string& phone) {
     phoneNumber = phone;
 }
 
-std::string extPersonType::getPhoneNumber() const {
-    return phoneNumber;
-}
-
-// Setter and getter for relationship
+// Sets relationship
 void extPersonType::setRelationship(const std::string& relation) {
     if (relation == "Family" || relation == "Friend" || relation == "Business") {
         relationship = relation;
@@ -36,11 +32,17 @@ void extPersonType::setRelationship(const std::string& relation) {
     }
 }
 
+// Gets phone number
+std::string extPersonType::getPhoneNumber() const {
+    return phoneNumber;
+}
+
+// Gets relationship
 std::string extPersonType::getRelationship() const {
     return relationship;
 }
 
-// Getter for birth month
+// Gets birth month
 int extPersonType::getBirthMonth() const {
     return birthdate.getMonth();
 }

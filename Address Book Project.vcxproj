@@ -131,7 +131,7 @@
     <ClCompile Include="DateType.cpp" />
     <ClCompile Include="extPersonType.cpp" />
     <ClCompile Include="personType.cpp" />
-    <ClCompile Include="testDateType.cpp" />
+    <ClCompile Include="testExtPersonType.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="addressType.h" />
