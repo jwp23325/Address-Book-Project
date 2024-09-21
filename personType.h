@@ -17,7 +17,9 @@ public:
     PersonType(const std::string& fName = "", const std::string& lName = "");   // Constructor with default parameters
     void setFirstName(const std::string& fName);                                // Sets first name
     void setLastName(const std::string& lName);                                 // Sets last name
+
     std::string getFirstName() const;                                           // Gets first name
-    std::string getLastName() const;                                             // Gets last nme
+    std::string getLastName() const;                                            // Gets last name
+
     void print() const;                                                         // Print method
 };
