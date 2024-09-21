@@ -1,32 +1,29 @@
+// PersonType.h
+// This file defines the PersonType class, which includes attributes for a person's first and last name,
+// along with methods for setting and getting these attributes, and a method for printing the details.
+// This code was outlined using ChatGPT and modified by the coder.
+
 #pragma once
-
-#include <string>
 #include <iostream>
+#include <string>
 
-class personType
-{
+class PersonType {
 private:
-	std::string firstName;
-	std::string lastName;
+    std::string firstName;
+    std::string lastName;
 
 public:
-	// Default and parameterized constructor
-	personType(std::string fName = "", std::string lName = "")
-	:firstName(fName), lastName(lName) {}
+    // Constructor with default parameters
+    PersonType(const std::string& fName = "", const std::string& lName = "");
 
-	void setFirstName(const std::string& fName) { firstName = fName; }
-	void setLastName(const std::string& lName) { lastName = lName; }
+    // Setters
+    void setFirstName(const std::string& fName);
+    void setLastName(const std::string& lName);
 
-	std::string getFirstName() const { return firstName; }
-	std::string getLastName() const { return lastName; }
+    // Getters
+    std::string getFirstName() const;
+    std::string getLastName() const;
 
-	void print() const {
-		std::cout << "Name: " << firstName << " " << lastName << std::endl;
-	}
-
-	std::string getFirstName() const {
-
-	}
-
+    // Print method
+    void print() const;
 };
-
