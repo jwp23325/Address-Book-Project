@@ -1,104 +1,40 @@
-// This code was outline using ChatGPT and modified by the programmer.
+// This class represents a date with validation features.
+// It includes methods for setting and getting date details,
+// as well as checking for leap years and calculating the number of days in a month.
+// This code was outlined using ChatGPT and modified by the coder.
 
 #pragma once
-# include <iostream>
+#include <iostream>
 
 
-
-class DateType
-{
+class DateType {
 private:
-	int dMonth;
-	int dDay;
-	int dYear;
+    int dMonth;
+    int dDay;
+    int dYear;
 
 public:
-	// Constructor with default parameters
-	DateType(int month = 1, int day = 1, int year = 1900) {
-		setDate(month, day, year);
-	}
-	
-	// Checks if year is a leap year
-	bool isLeapYear(int year) {
-		return (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0);
-	}
+    // Constructor with default parameters
+    DateType(int month = 1, int day = 1, int year = 1900);
 
-	// Sets date with validtion
-	void setDate(int month, int day, int year) {
+    // Checks if year is a leap year
+    bool isLeapYear(int year);
 
-		// Validates year
-		if (year >= 1900) {
-			dYear = year;
-		}
+    // Sets date with validation
+    void setDate(int month, int day, int year);
 
-		// Default year
-		else {
-			dYear = 1900;
-		}
+    // Gets the number of days in the month
+    int getDaysInMonth(int month, int year);
 
-		// Validates month
-		if (month >= 1 && month <= 12) {
-			dMonth = month;
-		}
+    // Gets day
+    int getDay();
 
-		// Default month
-		else {
-			dMonth = 1;
-		}
+    // Gets month
+    int getMonth();
 
-		// Maximum day in a month based on the year
-		int maxDay = getDaysInMonth(dMonth, dYear); {
+    // Gets year
+    int getYear();
 
-			// Validates day
-			if (day >= 1 && day <= maxDay) {
-				dDay = day;
-			}
-
-			// Default day
-			else {
-				dDay = 1;
-			}
-		}
-	}
-
-	// Gets the number of days in the month
-	int getDaysInMonth(int month, int year) {
-
-		// Control flow
-		switch(month) {
-			// January, March, May, July, August, October, December
-            case 1: case 3: case 5: case 7: case 8: case 10: case 12:
-				return 31;
-
-			// April, June, September, November
-			case 4: case 6: case 9: case 11:
-				return 30;
-		
-			// Febuary 
-			case 2:
-				return isLeapYear(year) ? 29 : 28;
-
-		}
-	}
-
-	// Gets day
-	int getDay() {
-		return dDay;
-	}
-
-	// Gets month
-	int getMonth() {
-		return dMonth;
-	}
-
-	// Gets year
-	int getYear() {
-		return dYear;
-	}
-	
-	// Print method
-	void print() const {
-		std::cout << dMonth << "/" << dDay << "/" << dYear << std::endl;
-	}
+    // Print method
+    void print() const;
 };
-
