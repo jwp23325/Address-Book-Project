@@ -15,42 +15,58 @@ addressBookType::addressBookType() : length(0), maxLength(500) {}
 // Initialize entries from a file
 void addressBookType::initEntry(const std::string& filename) {
     std::ifstream inputFile(filename);
+
+    // Returns error if file can not be opened
     if (!inputFile) {
         std::cerr << "Error opening file." << std::endl;
         return;
     }
 
+    // Initializing Variables
     std::string fName, lName, street, city, state, phone, relation;
     int month, day, year, zip;
 
+    // Run while array has room AND not at the end of text file
     while (length < maxLength && inputFile.peek() != EOF) {
 
-        inputFile >> fName >> lName;
-        inputFile.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        // Reads and stores first and last name
+        inputFile >> fName >> lName;                                            
 
-        inputFile >> month >> day >> year;
-        inputFile.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        // Reads and stores birthdate
+        inputFile >> month >> day >> year;                                      
+        inputFile.ignore(std::numeric_limits<std::streamsize>::max(), '\n');    // Skips to next line
 
-        std::getline(inputFile, street);
-       
-        std::getline(inputFile, city);
-
-        std::getline(inputFile, state);
-       
-        inputFile >> zip;
-        inputFile.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-
-        std::getline(inputFile, phone);
+        // Reads and stores street name
+        std::getline(inputFile, street);                                        
         
-        std::getline(inputFile, relation);
+        // Reads and stores city name
+        std::getline(inputFile, city);                                         
+        
+        // Reads and stores state name
+        std::getline(inputFile, state);                                         
+        
+        // Reads and stores zipcode
+        inputFile >> zip;                                                       
+        inputFile.ignore(std::numeric_limits<std::streamsize>::max(), '\n');    // Skips to next line
 
+        // Reads and stores phone number
+        std::getline(inputFile, phone);                                         
+        
+        // Reads and store relationship
+        std::getline(inputFile, relation);                                      
+
+        // Cretes a new person
         extPersonType newPerson(fName, lName, month, day, year, street, city, state, zip, phone, relation);
+
+        // Adds entry into array
         addEntry(newPerson);
     }
 }
 
 // Add an entry
 void addressBookType::addEntry(const extPersonType& person) {
+
+    // 
     if (length < maxLength) {
         addressList[length] = person;
         length++;
