@@ -3,32 +3,18 @@
 
 class DateType {
 private:
-    int dMonth;
-    int dDay;
-    int dYear;
+    int dMonth;                                                 // Month
+    int dDay;                                                   // Day
+    int dYear;                                                  // Year
 
 public:
-    // Constructor with default parameters
-    DateType(int month = 1, int day = 1, int year = 1900);
-
-    // Checks if year is a leap year
-    bool isLeapYear(int year) const;
-
-    // Sets date with validation
-    void setDate(int month, int day, int year);
-
-    // Gets the number of days in the month
-    int getDaysInMonth(int month, int year) const;
-
-    // Gets day
-    int getDay() const;
-
-    // Gets month
-    int getMonth() const;
-
-    // Gets year
-    int getYear() const;
-
-    // Print method
-    void print() const;
+    
+    DateType(int month = 1, int day = 1, int year = 1900);      // Constructor with default parameter
+    bool isLeapYear(int year) const;                            // Checks if year is a leap year
+    void setDate(int month, int day, int year);                 // Sets date with validation
+    int getDaysInMonth(int month, int year) const;              // Gets the number of days in the month
+    int getDay() const;                                         // Gets day
+    int getMonth() const;                                       // Gets month
+    int getYear() const;                                        // Gets year
+    void print() const;                                         // Print method
 };

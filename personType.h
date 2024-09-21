@@ -9,21 +9,15 @@
 
 class PersonType {
 private:
-    std::string firstName;
-    std::string lastName;
+    std::string firstName;                                                      // First Name
+    std::string lastName;                                                       // Last Name
 
 public:
-    // Constructor with default parameters
-    PersonType(const std::string& fName = "", const std::string& lName = "");
 
-    // Setters
-    void setFirstName(const std::string& fName);
-    void setLastName(const std::string& lName);
-
-    // Getters
-    std::string getFirstName() const;
-    std::string getLastName() const;
-
-    // Print method
-    void print() const;
+    PersonType(const std::string& fName = "", const std::string& lName = "");   // Constructor with default parameters
+    void setFirstName(const std::string& fName);                                // Sets first name
+    void setLastName(const std::string& lName);                                 // Sets last name
+    std::string getFirstName() const;                                           // Gets first name
+    std::string getLastName() const;                                             // Gets last nme
+    void print() const;                                                         // Print method
 };
