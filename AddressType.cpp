@@ -1,3 +1,8 @@
+// This source file implements the methods of the AddressType class.
+// It contains the definitions for the constructor, setters, getters, 
+// and a print method for displaying address information.
+// This code was outlined using ChatGPT and modified by the coder.
+
 #pragma once
 #include "AddressType.h"
 
