@@ -6,11 +6,17 @@
 #include "extPersonType.h"
 
 // Constructor with default parameters
-extPersonType::extPersonType(const std::string& fName, const std::string& lName,
-    int month, int day, int year,
-    const std::string& street, const std::string& city,
-    const std::string& state, int zip,
-    const std::string& phone, const std::string& relation)
+extPersonType::extPersonType(const std::string& fName, 
+                             const std::string& lName,
+                             int month, int day, 
+                             int year,
+                             const std::string& street,
+                             const std::string& city,
+                             const std::string& state,
+                             int zip,
+                             const std::string& phone, 
+                             const std::string& relation)
+
     : PersonType(fName, lName),
     birthdate(month, day, year),
     address(street, city, state, zip),
