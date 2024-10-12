@@ -41,12 +41,10 @@ public:
     void print() const;                                     // Print function
 };
 */
-
-
 #pragma once
 #include "personType.h"
-#include "dateType.h"
-#include "addressType.h"
+#include "dateType.h"   
+#include "addressType.h" 
 #include <string>
 #include <iostream>
 
@@ -77,19 +75,11 @@ public:
     int getBirthMonth() const;                              // Gets birth month
 
     void print() const;                                     // Print function
-
-    // Overloaded relational operators
-    bool operator==(const extPersonType& other) const {
-        return (getLastName() == other.getLastName() && getFirstName() == other.getFirstName());
-    }
-
-    bool operator!=(const extPersonType& other) const {
-        return !(*this == other);
-    }
-
-    bool operator>=(const extPersonType& other) const {
-        std::string key1 = getLastName() + " " + getFirstName();
-        std::string key2 = other.getLastName() + " " + other.getFirstName();
-        return key1 >= key2;
-    }
+    
+    // Overloaded operators
+    bool operator==(const extPersonType& other) const;     // Overload == operator
+    bool operator!=(const extPersonType& other) const;     // Overload != operator
+    bool operator>=(const extPersonType& other) const;     // Overload >= operator
+    
 };
+
