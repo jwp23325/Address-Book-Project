@@ -1,5 +1,4 @@
-#ifndef H_orderedListType
-#define H_orderedListType
+#pragma once
 #include "linkedList.h"
 using namespace std;
 
@@ -176,5 +175,4 @@ void orderedLinkedList<Type>::deleteNode(const Type& deleteItem)
 				<< "list." << endl;
 	}
 }														//end deleteNode
-#endif
 

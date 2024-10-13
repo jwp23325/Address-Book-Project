@@ -1,3 +1,9 @@
+// This source file serves as the client program for the Address Book application.
+// It provides a menu-driven interface for users to interact with the address book, 
+// allowing them to display entries, search for individuals, add new contacts, 
+// and delete existing entries. 
+// This code was outlined using ChatGPT and modified by the coder.
+
 #pragma once
 #include <iostream>
 #include "addressBookType.h"

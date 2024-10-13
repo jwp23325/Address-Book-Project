@@ -1,3 +1,8 @@
+// This header file defines the addressBookType class, which manages an 
+// online address book using a linked list. It includes methods for 
+// initializing entries, adding new contacts, and finding individuals 
+// This code was outlined using ChatGPT and modified by the coder.
+
 #pragma once
 #include "extPersonType.h"
 #include "orderedLinkedList.h"

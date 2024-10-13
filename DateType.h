@@ -1,3 +1,9 @@
+// This header file defines the DateType class, which encapsulates 
+// the functionality for managing and validating dates. It includes 
+// methods for setting dates, checking leap years, and printing date 
+// This code was outlined using ChatGPT and modified by the coder.
+
+
 #pragma once
 #include <iostream>
 
