@@ -72,74 +72,95 @@ void extPersonType::print() const {
 
 #include "extPersonType.h"
 
-// Constructor implementation
-extPersonType::extPersonType(const std::string& fName, 
-                             const std::string& lName,
-                             int month, int day, 
-                             int year,
-                             const std::string& street, 
-                             const std::string& city,
-                             const std::string& state, 
-                             int zip,
-                             const std::string& phone, 
-                             const std::string& relation)
-    : PersonType(fName, lName), // Call the base class constructor
-      birthdate(month, day, year), // Initialize birthdate
-      address(street, city, state, zip), // Initialize address
-      phoneNumber(phone), // Initialize phone number
-      relationship(relation) // Initialize relationship
-{}
+// Constructor
+extPersonType::extPersonType(const std::string& fName, const std::string& lName,
+    int month, int day, int year,
+    const std::string& street, const std::string& city,
+    const std::string& state, int zip,
+    const std::string& phone, const std::string& relation)
+    : PersonType(fName, lName),
+    birthdate(month, day, year),
+    address(street, city, state, zip),
+    phoneNumber(phone),
+    relationship(relation) {}
 
-// Overload the == operator
-bool extPersonType::operator==(const extPersonType& other) const {
-    return (this->getLastName() == other.getLastName() && 
-            this->getFirstName() == other.getFirstName());
-}
-
-// Overload the != operator
-bool extPersonType::operator!=(const extPersonType& other) const {
-    return !(*this == other);  // Utilizing the == operator
-}
-
-// Overload the >= operator
-bool extPersonType::operator>=(const extPersonType& other) const {
-    std::string thisKey = this->getLastName() + " " + this->getFirstName();
-    std::string otherKey = other.getLastName() + " " + other.getFirstName();
-    return thisKey >= otherKey;
-}
-
-// Set phone number
+// Setter for phone number
 void extPersonType::setPhoneNumber(const std::string& phone) {
-    phoneNumber = phone;
+    phoneNumber = phone; // Set the phone number
 }
 
-// Set relationship
+// Setter for relationship
 void extPersonType::setRelationship(const std::string& relation) {
-    relationship = relation;
+    relationship = relation; // Set the relationship
 }
 
-// Get phone number
+// Getter for phone number
 std::string extPersonType::getPhoneNumber() const {
     return phoneNumber;
 }
 
-// Get relationship
+// Getter for relationship
 std::string extPersonType::getRelationship() const {
     return relationship;
 }
 
-// Get birth month
+// Getter for birth month
 int extPersonType::getBirthMonth() const {
     return birthdate.getMonth();
 }
 
+// Getter for birth day
+int extPersonType::getBirthDay() const {
+    return birthdate.getDay();
+}
+
+// Getter for birth year
+int extPersonType::getBirthYear() const {
+    return birthdate.getYear();
+}
+
+// Getter for street
+std::string extPersonType::getAddress() const {
+    return address.getAddress();
+}
+
+// Getter for city
+std::string extPersonType::getCity() const {
+    return address.getCity();
+}
+
+// Getter for state
+std::string extPersonType::getState() const {
+    return address.getState();
+}
+
+// Getter for zip
+int extPersonType::getZipcode() const {
+    return address.getZipcode();
+}
+
 // Print function
 void extPersonType::print() const {
-    std::cout << "Name: " << getFirstName() << " " << getLastName() << std::endl;
-    std::cout << "Birthdate: ";
-    birthdate.print();
-    std::cout << "Address: ";
-    address.print();
-    std::cout << "Phone Number: " << phoneNumber << std::endl;
+    PersonType::print();  // Print the base class information
+    std::cout << "Birthdate: " << birthdate.getDay() << "/"
+        << birthdate.getMonth() << "/" << birthdate.getYear() << std::endl;
+    std::cout << "Address: " << address.getAddress() << ", "
+        << address.getCity() << ", "
+        << address.getState() << " "
+        << address.getZipcode() << std::endl;
+    std::cout << "Phone: " << phoneNumber << std::endl;
     std::cout << "Relationship: " << relationship << std::endl;
+}
+
+// Overloaded operators
+bool extPersonType::operator==(const extPersonType& other) const {
+    return (getFirstName() == other.getFirstName() && getLastName() == other.getLastName());
+}
+
+bool extPersonType::operator!=(const extPersonType& other) const {
+    return !(*this == other);
+}
+
+bool extPersonType::operator>=(const extPersonType& other) const {
+    return (getLastName() >= other.getLastName());
 }

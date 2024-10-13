@@ -74,12 +74,22 @@ public:
     std::string getRelationship() const;                    // Gets relationship    
     int getBirthMonth() const;                              // Gets birth month
 
+    // New getter functions for DateType
+    int getBirthDay() const;                                // Gets birth day
+    int getBirthYear() const;                               // Gets birth year
+
+    // New getter functions for AddressType
+    std::string getAddress() const;                          // Gets street
+    std::string getCity() const;                            // Gets city
+    std::string getState() const;                           // Gets state
+    int getZipcode() const;                                     // Gets zip
+
     void print() const;                                     // Print function
-    
+
     // Overloaded operators
     bool operator==(const extPersonType& other) const;     // Overload == operator
     bool operator!=(const extPersonType& other) const;     // Overload != operator
     bool operator>=(const extPersonType& other) const;     // Overload >= operator
-    
 };
+
 

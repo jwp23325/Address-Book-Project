@@ -318,11 +318,11 @@ void addressBookType::saveData(const std::string& filename) const {
             << person.getBirthMonth() << " "
             << person.getBirthDay() << " "
             << person.getBirthYear() << "\n"
-            << person.getStreet() << "\n"
+            << person.getAddress() << "\n"
             << person.getCity() << "\n"
             << person.getState() << "\n"
-            << person.getZip() << "\n"
-            << person.getPhone() << "\n"
+            << person.getZipcode() << "\n"
+            << person.getPhoneNumber() << "\n"
             << person.getRelationship() << "\n";
 
         current = current->link; // Move to the next node
