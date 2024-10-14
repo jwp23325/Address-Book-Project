@@ -68,19 +68,23 @@ void addressBookType::addEntry(const extPersonType& person) {
     insert(person);
 }
 
-// Find a person by last name
-void addressBookType::findPerson(const std::string& lastName) const {
-    nodeType<extPersonType>* current = first;                           // Start at the head of the linked list
+// Find a person by first and last name
+void addressBookType::findPerson(const std::string& lastName, const std::string& firstName) const {
+    nodeType<extPersonType>* current = first;           // Start at the head of the linked list
+
+    // Create a temporary extPersonType object for comparison
+    extPersonType tempPerson(firstName, lastName, 0, 0, 0, "", "", "", 0, "", ""); // Use dummy values for the rest of the fields
 
     while (current != nullptr) {
-        if (current->info.getLastName() == lastName) {
+        if (current->info == tempPerson) {
             current->info.print();
             return;
         }
-        current = current->link;                                        // Move to the next node
+        current = current->link;                        // Move to the next node
     }
     std::cout << "Person not found." << std::endl;
 }
+
 
 // Find entries with birthdays in a given month
 void addressBookType::findBirthdays(int month) const {

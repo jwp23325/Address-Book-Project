@@ -13,7 +13,7 @@ void showMenu() {
     std::cout << "On-line Address Book" << std::endl;
     std::cout << "Select an option:" << std::endl;
     std::cout << "1 - Display all entries in the address Book." << std::endl;
-    std::cout << "2 - Display an entry by a person’s name." << std::endl;
+    std::cout << "2 - Display an entry by a person's name." << std::endl;
     std::cout << "3 - Display all entries with a given birth month." << std::endl;
     std::cout << "4 - Display all entries with a given relationship tag." << std::endl;
     std::cout << "5 - Add a new entry." << std::endl;
@@ -38,10 +38,12 @@ int main() {
             myAddressBook.print();
             break;
         case 2: {
-            std::string lastName;
+            std::string lastName,firstName;
             std::cout << "Enter last name: ";
             std::getline(std::cin, lastName);
-            myAddressBook.findPerson(lastName);
+            std::cout << "Enter first name: ";
+            std::getline(std::cin, firstName);
+            myAddressBook.findPerson(lastName,firstName);
             break;
         }
         case 3: {
