@@ -211,10 +211,9 @@ public:
 	//Postcondition: The list object is destroyed.
 
 protected:
-	int count;						//variable to store the number of
-									//elements in the list
-	nodeType<Type>* first;			//pointer to the first node of the list
-	nodeType<Type>* last;			//pointer to the last node of the list
+	int count;												//variable to store the number of elements in the list
+	nodeType<Type>* first;									//pointer to the first node of the list
+	nodeType<Type>* last;									//pointer to the last node of the list
 
 private:
 	void copyList(const linkedListType<Type>& otherList);
@@ -234,7 +233,7 @@ bool linkedListType<Type>::isEmptyList() const
 
 
 template <class Type>
-linkedListType<Type>::linkedListType()		//default constructor
+linkedListType<Type>::linkedListType()						//default constructor
 {
 	first = nullptr;
 	last = nullptr;
@@ -246,16 +245,15 @@ linkedListType<Type>::linkedListType()		//default constructor
 template <class Type>
 void linkedListType<Type>::destroyList()
 {
-	nodeType<Type>* temp;					//pointer to deallocate the memory
-											//occupied by the node
-	while (first != nullptr)				//while there are nodes in the list
+	nodeType<Type>* temp;									//pointer to deallocate the memory occupied by the node
+	while (first != nullptr)								//while there are nodes in the list
 	{										
-		temp = first;						//set temp to the current node
-		first = first->link;				//advance first to the next node
-		delete temp;						//deallocate the memory occupied by temp
+		temp = first;										//set temp to the current node
+		first = first->link;								//advance first to the next node
+		delete temp;										//deallocate the memory occupied by temp
 	}
-	last = nullptr;							//initialize last to nullptr; first has
-											//already been set to nullptr by the while loop
+	last = nullptr;											//initialize last to nullptr; first has
+															//already been set to nullptr by the while loop
 	count = 0;
 }
 
@@ -264,7 +262,7 @@ void linkedListType<Type>::destroyList()
 template <class Type>
 void linkedListType<Type>::initializeList()
 {
-	destroyList();							//if the list has any nodes, delete them
+	destroyList();											//if the list has any nodes, delete them
 }
 
 
@@ -272,16 +270,16 @@ void linkedListType<Type>::initializeList()
 template <class Type>
 void linkedListType<Type>::print() const
 {
-	nodeType<Type>* current;				//pointer to traverse the list
-	current = first;						//set current so that it points to
-											//the first node
+	nodeType<Type>* current;								//pointer to traverse the list
+	current = first;										//set current so that it points to
+															//the first node
 
-	while (current != nullptr)				//while more data to print
+	while (current != nullptr)								//while more data to print
 	{
 		cout << current->info << " ";
 		current = current->link;
 	}
-}											//end print
+}															//end print
 
 
 
@@ -298,8 +296,8 @@ void linkedListType<Type>::reversePrint(nodeType<Type>* current) const
 {
 	if (current != nullptr)
 	{
-		reversePrint(current->link);		//print the tail
-		cout << current->info << " ";		//print the node
+		reversePrint(current->link);						//print the tail
+		cout << current->info << " ";						//print the node
 	}
 }
 
@@ -309,7 +307,7 @@ template <class Type>
 int linkedListType<Type>::length() const
 {
 	return count;
-}											//end length
+}															//end length
 
 
 
@@ -317,8 +315,8 @@ template <class Type>
 Type linkedListType<Type>::front() const
 {
 	assert(first != nullptr);
-	return first->info;						//return the info of the first node
-}											//end front
+	return first->info;										//return the info of the first node
+}															//end front
 
 
 
@@ -326,8 +324,8 @@ template <class Type>
 Type linkedListType<Type>::back() const
 {
 	assert(last != nullptr);
-	return last->info;						//return the info of the last node
-}											//end back
+	return last->info;										//return the info of the last node
+}															//end back
 
 
 
@@ -352,11 +350,11 @@ linkedListIterator<Type> linkedListType<Type>::end()
 template <class Type>
 void linkedListType<Type>::copyList(const linkedListType<Type>& otherList)
 {
-	nodeType<Type>* newNode;				//pointer to create a node
-	nodeType<Type>* current;				//pointer to traverse the list
-	if (first != nullptr)					//if the list is nonempty, make it empty
+	nodeType<Type>* newNode;								//pointer to create a node
+	nodeType<Type>* current;								//pointer to traverse the list
+	if (first != nullptr)									//if the list is nonempty, make it empty
 		destroyList();
-	if (otherList.first == nullptr)			//otherList is empty
+	if (otherList.first == nullptr)							//otherList is empty
 	{
 		first = nullptr;
 		last = nullptr;
@@ -364,34 +362,34 @@ void linkedListType<Type>::copyList(const linkedListType<Type>& otherList)
 	}
 	else
 	{
-		current = otherList.first;			//current points to the list to be copied
-		count = otherList.count;			//copy the first node
-		first = new nodeType<Type>;			//create the node
-		first->info = current->info;		//copy the info
-		first->link = nullptr;				//set the link field of the node to nullptr
-		last = first;						//make last point to the first node
-		current = current->link;			//make current point to the next node
-											//copy the remaining list
+		current = otherList.first;							//current points to the list to be copied
+		count = otherList.count;							//copy the first node
+		first = new nodeType<Type>;							//create the node
+		first->info = current->info;						//copy the info
+		first->link = nullptr;								//set the link field of the node to nullptr
+		last = first;										//make last point to the first node
+		current = current->link;							//make current point to the next node
+															//copy the remaining list
 
 		while (current != nullptr)
 		{
-			newNode = new nodeType<Type>;	//create a node
-			newNode->info = current->info;	//copy the info
-			newNode->link = nullptr;		//set the link of newNode to nullptr
-			last->link = newNode;			//attach newNode after last
-			last = newNode;					//make last point to the actual last node
-			current = current->link;		//make current point to the next node
-		}									//end while
-	}										//end else
-}											//end copyList
+			newNode = new nodeType<Type>;					//create a node
+			newNode->info = current->info;					//copy the info
+			newNode->link = nullptr;						//set the link of newNode to nullptr
+			last->link = newNode;							//attach newNode after last
+			last = newNode;									//make last point to the actual last node
+			current = current->link;						//make current point to the next node
+		}													//end while
+	}														//end else
+}															//end copyList
 
 
 
 template <class Type>
-linkedListType<Type>::~linkedListType()		//destructor
+linkedListType<Type>::~linkedListType()						//destructor
 {
 	destroyList();
-}											//end destructor
+}															//end destructor
 
 
 
@@ -400,18 +398,18 @@ linkedListType<Type>::linkedListType(const linkedListType<Type>& otherList)
 {
 	first = nullptr;
 	copyList(otherList);
-}											//end copy constructor
-											//overload the assignment operator
+}															//end copy constructor
+															//overload the assignment operator
 
 
 
 template <class Type>
 const linkedListType<Type>& linkedListType<Type>::operator=(const linkedListType<Type>& otherList)
 {
-	if (this != &otherList)					//avoid self-copy
+	if (this != &otherList)									//avoid self-copy
 	{
 		copyList(otherList);
-	}										//end else
+	}														//end else
 	return *this;
 }
 #endif
