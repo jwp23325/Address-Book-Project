@@ -1,3 +1,8 @@
+// This class represents a date with month, day, and year attributes.
+// It provides methods for validating and setting the date, and checking for leap years.
+// Additional methods allow retrieval of date components and printing the date.
+// This code was outlined using ChatGPT and modified by the coder.
+
 #pragma once
 #include <iostream>
 

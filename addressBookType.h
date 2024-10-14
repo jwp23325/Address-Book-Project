@@ -1,3 +1,8 @@
+// This class defines an address book system based on a linked list of people.
+// It includes methods to search for people by various attributes like name, birthdays, and relations.
+// The entries are maintained in sorted order using the orderedLinkedList template.
+// This code was outlined using ChatGPT and modified by the coder.
+
 #pragma once
 #include "extPersonType.h"
 #include "orderedLinkedList.h"
