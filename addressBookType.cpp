@@ -33,6 +33,7 @@ void addressBookType::initEntry(const std::string& filename) {
 
         // Reads and stores birthdate
         inputFile >> month >> day >> year;
+        std::cout << month << " " << day << " " << year << std::endl;
         inputFile.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Skips to next line
 
         // Reads and stores street name
