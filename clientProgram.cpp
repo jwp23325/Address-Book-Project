@@ -32,10 +32,12 @@ int main() {
             myAddressBook.print();
             break;
         case 2: {
-            std::string lastName;
+            std::string lastName,firstName;
             std::cout << "Enter last name: ";
             std::getline(std::cin, lastName);
-            myAddressBook.findPerson(lastName);
+            std::cout << "Enter first name: ";
+            std::getline(std::cin, firstName);
+            myAddressBook.findPerson(lastName,firstName);
             break;
         }
         case 3: {
